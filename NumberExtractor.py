@@ -1,15 +1,17 @@
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
-import numpy as np
 from keras.models import model_from_json
 
-# Load the saved model
+# Load the saved model architecture from JSON file
 json_file = open('models/model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
+
+# Load the model from JSON
 loaded_model = model_from_json(loaded_model_json)
-# load weights into new model
+
+# Load weights into the model
 loaded_model.load_weights("models/model.h5")
 print("Loaded saved model from disk.")
  
