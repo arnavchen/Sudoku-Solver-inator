@@ -21,8 +21,9 @@ This is a Python application that uses computer vision techniques and machine le
 
 # Usage
 Run the Sudoku Solver by providing the path to an input Sudoku image as a command-line argument:
-
-   ```python Sudoku-Solver-inator.py path-to-image/img.jpg```
+   ```bash
+   python Sudoku-Solver-inator.py path-to-image/img.jpg
+   ```
 
 # Acknowledgments
 This project was inspired by a strange urge to try to teach myself how to use computer vision properly and give me a way to have a chance against my girlfriend (I can't guarantee the success rate against an SO).
