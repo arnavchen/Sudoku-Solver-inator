@@ -9,7 +9,7 @@ from solver import *
 classes = np.arange(0, 10)
 
 model = load_model('model-OCR.h5')
-# print(model.summary())
+print(model.summary())
 input_size = 48
 
 
@@ -90,7 +90,7 @@ def displayNumbers(img, numbers, color=(0, 255, 0)):
     return img
 
 # Read image
-img = cv2.imread('sudoku1.jpg')
+img = cv2.imread('sudoku_3.jpg')
 
 
 # extract board from input image
