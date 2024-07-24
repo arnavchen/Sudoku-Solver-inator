@@ -4,20 +4,8 @@ import argparse  # Import argparse module for command-line argument parsing
 import cv2  # Import OpenCV library
 import numpy as np  # Import NumPy library
 from tensorflow.keras.models import load_model  # Import function to load Keras model
-import imutils  # Import imutils library for convenience functions
 from solver_functions import *  # Import functions from custom Sudoku solver module
-from extraction_functions import *
-
-# Parse command-line arguments
-parser = argparse.ArgumentParser(description='Sudoku Solver')
-parser.add_argument('image_path', type=str, help='Path to the input Sudoku image')
-args = parser.parse_args()
-
-classes = np.arange(0, 10)  # Array of possible digit classes (0-9)
-
-model = load_model('model-OCR.h5')  # Load the pre-trained OCR model
-print(model.summary())  # Print model summary to console
-input_size = 48  # Size of input images expected by the OCR model
+from extraction_functions import * # Import functions from custom extraction processes module
 
 
 def split_boxes(board):
@@ -60,6 +48,17 @@ def displayNumbers(img, numbers, color=(0, 100, 0)):
                 cv2.putText(img, str(numbers[(j * 9) + i]), (i * W + int(W / 2) - int((W / 4)), int((j + 0.7) * H)), 
                             cv2.FONT_HERSHEY_COMPLEX, 2, color, 2, cv2.LINE_AA)  # Draw text on the image
     return img
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description='Sudoku Solver')
+parser.add_argument('image_path', type=str, help='Path to the input Sudoku image')
+args = parser.parse_args()
+
+classes = np.arange(0, 10)  # Array of possible digit classes (0-9)
+
+model = load_model('model-OCR.h5')  # Load the pre-trained OCR model
+print(model.summary())  # Print model summary to console
+input_size = 48  # Size of input images expected by the OCR model
 
 # Read input image
 img = cv2.imread(args.image_path)
