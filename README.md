@@ -27,4 +27,4 @@ Run the Sudoku Solver by providing the path to an input Sudoku image as a comman
 
 # Acknowledgments
 1. This project was inspired by a strange urge to try to teach myself how to use computer vision properly and give me a way to have a chance against my SO (I can't guarantee the success rate against an SO).
-2. Special thanks to contributors and open source libraries used in this project.
+2. Special thanks to the open source libraries used in this project.
